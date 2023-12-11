@@ -28,7 +28,6 @@ export default {
         <div class="card">
             Academic Focus
         </div>
-
         <div class="card">
             Education & Career
         </div>
@@ -84,10 +83,22 @@ export default {
         padding: 3rem;
         font-size: 3.5rem;
         text-align: center;
+        position: relative;
 
         &:hover {
             background-color: $colorFont;
             color: $colorBackground;
+
+            &:after {
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+                content: "";
+                width: 80%;
+                aspect-ratio: 1;
+                border: 1px solid $colorBackground;
+            }
         }
 
         .profile_img {
@@ -97,10 +108,6 @@ export default {
             background-repeat: no-repeat;
             background-size: cover;
             filter: grayscale(100%);
-
-            &:hover {
-                filter: none;
-            }
         }
     }
 
