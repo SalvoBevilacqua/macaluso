@@ -78,6 +78,9 @@ export default {
         &:hover {
             background-color: $colorFont;
             color: $colorBackground;
+            transition-property: background-color;
+            transition-duration: .2s;
+            transition-timing-function: linear;
 
             &:after {
                 position: absolute;
