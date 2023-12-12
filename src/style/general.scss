@@ -43,56 +43,10 @@ body {
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $colorFont;
     border-radius: 4px;
 }
-
-
-
-/* CARD */
-// .bio_card {
-//     display: none;
-// }
-
-// .card {
-//     padding: 4rem;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     border: 1px solid black;
-//     border-radius: var(--radius);
-//     transform: translate(-50%, -50%);
-//     background-color: var(--background_main);
-//     display: flex;
-//     justify-content: center;
-// }
-
-// .card .info_title {
-//     margin-bottom: 2rem;
-//     text-shadow:
-//         -1px -1px 0 orange,
-//         1px -1px 0 orange,
-//         -1px 1px 0 orange,
-//         1px 1px 0 orange;
-// }
-
-// .card .text {
-//     margin-top: 3rem;
-// }
-
-// .card hr,
-// .card .text {
-//     width: 80%;
-// }
-
-// .close {
-//     position: absolute;
-//     right: 3%;
-//     top: 5%;
-//     font-size: 3rem;
-//     cursor: crosshair;
-// }

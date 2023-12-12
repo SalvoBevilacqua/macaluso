@@ -1,6 +1,10 @@
 <script>
-export default {
+import CardBiography from './card/CardBiography.vue';
+import CardContact from './card/CardContact.vue';
+import CardIcon from './card/CardIcon.vue';
 
+export default {
+    components: { CardContact, CardIcon, CardBiography }
 }
 </script>
 
@@ -8,7 +12,7 @@ export default {
     <div id="main">
 
         <div class="card">
-            Biography
+            <CardBiography />
         </div>
         <div class="card img">
             <div class="profile_img"></div>
@@ -36,27 +40,11 @@ export default {
         </div>
 
         <div class="card contact">
-            <h3>Contacts:</h3>
-            <div class="item">
-                <i class="fa-solid fa-phone"></i>
-                <p>+49 681 85775 5242</p>
-            </div>
-            <div class="item">
-                <i class="fa-solid fa-envelope"></i>
-                <p>antonio.macaluso@dfki.de</p>
-            </div>
-            <div class="item">
-                <i class="fa-solid fa-location-dot"></i>
-                <p>Stuhlsatzenhausweg 3, Saarland Informatics Campus D3.2, 66123 Saarbruecken, Germany</p>
-            </div>
+            <CardContact />
         </div>
 
         <div class="card icon">
-            <a href=""><i class="fa-brands fa-google fa-3x"></i></a>
-            <a href=""><i class="fa-brands fa-orcid fa-3x"></i></a>
-            <a href=""><i class="fa-brands fa-github fa-3x"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin fa-3x"></i></a>
-            <a href=""><i class="fa-brands fa-researchgate fa-3x"></i></a>
+            <CardIcon />
         </div>
 
         <div class="card img">
@@ -69,9 +57,11 @@ export default {
 @use "../style/variables" as *;
 
 #main {
-    padding: 0 3rem;
+    width: calc(100% - 6rem);
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid $colorFont;
 
     .card {
         width: 25%;
@@ -108,6 +98,7 @@ export default {
             background-repeat: no-repeat;
             background-size: cover;
             filter: grayscale(100%);
+            z-index: 2;
         }
     }
 
@@ -119,27 +110,18 @@ export default {
         display: flex;
         flex-direction: column;
         gap: .8rem;
-
-        h3 {
-            margin-bottom: 1rem;
-        }
-
-        .item {
-            display: flex;
-            align-items: baseline;
-            gap: .8rem;
-        }
     }
 
     .icon {
         justify-content: space-between;
         font-size: unset;
 
-        a {
-            &:hover {
-                color: black;
+        &:hover {
+            &:after {
+                border: none;
             }
         }
+
     }
 
     .img {
