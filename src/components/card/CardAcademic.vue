@@ -5,7 +5,7 @@ export default {
 
 <template>
     <div id="my_card">
-        <p class="title">Biography</p>
+        <p class="title">Academic Focus</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus eaque necessitatibus tenetur quibusdam beatae
             quidem aut iure dignissimos, laboriosam adipisci placeat reiciendis natus deserunt quod, facere temporibus
             aperiam! Non, ex!</p>
