@@ -4,19 +4,32 @@ export default {
 </script>
 
 <template>
-    <a href="https://scholar.google.com/citations?user=Z2R5HuEAAAAJ&hl=it"><i class="fa-brands fa-google fa-3x"></i></a>
-    <a href="https://orcid.org/0000-0002-1348-250X"><i class="fa-brands fa-orcid fa-3x"></i></a>
-    <a href="https://github.com/amacaluso"><i class="fa-brands fa-github fa-3x"></i></a>
-    <a href="https://www.linkedin.com/in/antonio-macaluso/"><i class="fa-brands fa-linkedin fa-3x"></i></a>
-    <a href="https://www.researchgate.net/profile/Antonio-Macaluso"><i class="fa-brands fa-researchgate fa-3x"></i></a>
+    <div>
+        <a href="https://scholar.google.com/citations?user=Z2R5HuEAAAAJ&hl=it"><i class="fa-brands fa-google"></i></a>
+        <a href="https://orcid.org/0000-0002-1348-250X"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://github.com/amacaluso"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/antonio-macaluso/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.researchgate.net/profile/Antonio-Macaluso"><i class="fa-brands fa-researchgate"></i></a>
+    </div>
 </template>
 
 <style scoped lang="scss">
-a {
-    z-index: 2;
+@use "../../style/variables" as *;
 
-    &:hover {
-        color: black;
+div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    a {
+        font-size: 2rem;
+        z-index: 2;
+
+        &:hover {
+            color: white;
+        }
     }
 }
 </style>

@@ -37,9 +37,9 @@ export default {
                 </div>
             </div>
 
-            <div class="card img">
+            <!-- <div class="card img">
                 <div class="profile_img"></div>
-            </div>
+            </div> -->
 
             <div class="card" @click="active(1)" :class="index === 1 ? 'active' : ''">
                 <p class="name" v-if="index != 1">Teaching</p>
@@ -119,12 +119,16 @@ export default {
 
 #main {
     .footer_out {
-        margin: 3rem 3rem 3rem 0;
+        margin-top: 4rem;
         text-align: end;
+
+        &:hover {
+            color: $colorHighContrast;
+        }
     }
 
     .col {
-        width: calc(100% - 6rem);
+        width: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -144,7 +148,7 @@ export default {
         }
 
         .card {
-            width: calc(100% / 6);
+            width: calc(100% / 5);
             aspect-ratio: 1;
             display: flex;
             justify-content: center;
@@ -207,8 +211,22 @@ export default {
             }
         }
 
+        .icon {
+            &:hover {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+
         .footer {
             text-align: end;
+
+            &:hover {
+                &:after {
+                    content: none;
+                }
+            }
         }
     }
 }

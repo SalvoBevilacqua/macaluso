@@ -16,8 +16,8 @@ export default {
 </script>
 
 <template>
-    <AppHeader />
-    <div class="main">
+    <div class="build">
+        <AppHeader />
         <AppMain />
     </div>
 </template>
@@ -26,7 +26,7 @@ export default {
 @use "../src/style/general.scss";
 @import "@fortawesome/fontawesome-free/css/all.css";
 
-.main {
-    margin-bottom: 3rem;
+.build {
+    padding: 4rem;
 }
 </style>

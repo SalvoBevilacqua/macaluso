@@ -1,5 +1,11 @@
 <script>
+import teachlist from './dataJs/teaching.js';
 export default {
+    data() {
+        return {
+            list: teachlist,
+        }
+    }
 }
 </script>
 
@@ -8,7 +14,11 @@ export default {
         <p class="title">Teaching</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus eaque necessitatibus tenetur quibusdam beatae
             quidem aut iure dignissimos, laboriosam adipisci placeat reiciendis natus deserunt quod, facere temporibus
-            aperiam! Non, ex!</p>
+            aperiam! Non, ex!
+        </p>
+        <ul>
+            <li v-for="item in list">gigi</li>
+        </ul>
     </div>
 </template>
 

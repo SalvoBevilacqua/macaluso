@@ -36,7 +36,7 @@ export default {
         display: flex;
         align-items: baseline;
         gap: .8rem;
-        margin-bottom: .5rem;
+        margin-bottom: .8rem;
     }
 
     .title {
