@@ -9,24 +9,19 @@ import CardEducation from './card/CardEducation.vue';
 import CardProfessional from './card/CardProfessional.vue';
 import CardResearch from './card/CardResearch.vue';
 import CardTeaching from './card/CardTeaching.vue';
+import AppFooter from './AppFooter.vue';
 
 export default {
     data() {
         return {
             index: 999,
-            open: false,
+            class_active: '',
         }
     },
-    components: { CardContact, CardIcon, CardBiography, CardPublications, CardAcademic, CardAward, CardEducation, CardProfessional, CardResearch, CardTeaching },
+    components: { CardContact, CardIcon, CardBiography, CardPublications, CardAcademic, CardAward, CardEducation, CardProfessional, CardResearch, CardTeaching, AppFooter },
     methods: {
         active(id) {
-            if (this.open === false) {
-                this.open = true;
-                this.index = id;
-            } else {
-                this.open = false;
-                this.index = 999;
-            }
+            this.index = id;
         }
     },
 }
@@ -35,8 +30,7 @@ export default {
 <template>
     <div id="main">
         <div class="col">
-
-            <div class="card" @click="active(0)" :class="{ 'active': index === 0 }">
+            <div class="card" @click="active(0)" :class="index === 0 ? 'active' : ''">
                 <p class="name" v-if="index != 0">Biography</p>
                 <div v-if="index === 0">
                     <CardBiography />
@@ -47,66 +41,75 @@ export default {
                 <div class="profile_img"></div>
             </div>
 
-            <div class="card" @click="active(1)" :class="{ 'active': index === 1 }">
+            <div class="card" @click="active(1)" :class="index === 1 ? 'active' : ''">
                 <p class="name" v-if="index != 1">Teaching</p>
                 <div v-if="index === 1">
                     <CardTeaching />
                 </div>
             </div>
 
-            <div class="card" @click="active(2)" :class="{ 'active': index === 2 }">
+            <div class="card" @click="active(2)" :class="index === 2 ? 'active' : ''">
                 <p class="name" v-if="index != 2">Research</p>
                 <div v-if="index === 2">
                     <CardResearch />
                 </div>
             </div>
 
-            <div class="card" @click="active(3)" :class="{ 'active': index === 3 }">
+            <div class="card" @click="active(3)" :class="index === 3 ? 'active' : ''">
                 <p class="name" v-if="index != 3">Professional Background</p>
                 <div v-if="index === 3">
                     <CardProfessional />
                 </div>
             </div>
 
-            <div class="card" @click="active(4)" :class="{ 'active': index === 4 }">
+            <div class="card" @click="active(4)" :class="index === 4 ? 'active' : ''">
                 <p class="name" v-if="index != 4">Academic Focus</p>
                 <div v-if="index === 4">
                     <CardAcademic />
                 </div>
             </div>
 
-            <div class="card" @click="active(5)" :class="{ 'active': index === 5 }">
+            <div class="card" @click="active(5)" :class="index === 5 ? 'active' : ''">
                 <p class="name" v-if="index != 5">Education & Career</p>
                 <div v-if="index === 5">
                     <CardEducation />
                 </div>
             </div>
 
-            <div class="card" @click="active(6)" :class="{ 'active': index === 6 }">
+            <div class="card" @click="active(6)" :class="index === 6 ? 'active' : ''">
                 <p class="name" v-if="index != 6">Publications</p>
                 <div v-if="index === 6">
                     <CardPublications />
                 </div>
             </div>
 
-            <div class="card" @click="active(7)" :class="{ 'active': index === 7 }">
+            <div class="card" @click="active(7)" :class="index === 7 ? 'active' : ''">
                 <p class="name" v-if="index != 7">Award</p>
                 <div v-if="index === 7">
                     <CardAward />
                 </div>
             </div>
 
-            <div class="card contact">
-                <CardContact />
+            <div class="card" @click="active(8)" :class="index === 8 ? 'active' : ''">
+                <p class="name" v-if="index != 8">Contact</p>
+                <div v-if="index === 8">
+                    <CardContact />
+                </div>
             </div>
 
             <div class="card icon">
                 <CardIcon />
             </div>
 
-            <div class="card img">
-                <div class="profile_img"></div>
+            <div class="card footer" v-if="index != 999">
+                <AppFooter />
             </div>
+
+            <span v-if="index != 999" @click="index = 999">&#9938</span>
+        </div>
+
+        <div v-if="index === 999" class="footer_out">
+            <AppFooter />
         </div>
     </div>
 </template>
@@ -115,15 +118,33 @@ export default {
 @use "../style/variables" as *;
 
 #main {
+    .footer_out {
+        margin: 3rem 3rem 3rem 0;
+        text-align: end;
+    }
+
     .col {
         width: calc(100% - 6rem);
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         border: 1px solid $colorFont;
+        position: relative;
+
+        span {
+            font-size: x-large;
+            position: absolute;
+            top: -35px;
+            right: 50%;
+            transform: translateX(50%);
+
+            &:hover {
+                color: $colorHighContrast;
+            }
+        }
 
         .card {
-            width: 25%;
+            width: calc(100% / 6);
             aspect-ratio: 1;
             display: flex;
             justify-content: center;
@@ -134,7 +155,7 @@ export default {
             position: relative;
 
             .name {
-                font-size: 3.5rem;
+                font-size: 2rem;
             }
 
             &:hover {
@@ -167,28 +188,6 @@ export default {
             }
         }
 
-        .contact {
-            padding: 5rem;
-            align-items: start;
-            text-align: left;
-            font-size: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: .8rem;
-        }
-
-        .icon {
-            justify-content: space-between;
-            font-size: unset;
-
-            &:hover {
-                &:after {
-                    border: none;
-                }
-            }
-
-        }
-
         .img {
             padding: 4.5rem;
         }
@@ -206,6 +205,10 @@ export default {
                     display: none;
                 }
             }
+        }
+
+        .footer {
+            text-align: end;
         }
     }
 }

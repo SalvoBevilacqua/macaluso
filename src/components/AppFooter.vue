@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div id="footer">
+    <div>
         Made with &hearts; from your <br> friendly neighborhood researcher
     </div>
 </template>
@@ -13,10 +13,4 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/variables" as *;
-
-#footer {
-    color: black;
-    text-align: end;
-    padding: 3rem;
-}
 </style>
