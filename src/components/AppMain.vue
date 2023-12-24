@@ -37,10 +37,6 @@ export default {
                 </div>
             </div>
 
-            <!-- <div class="card img">
-                <div class="profile_img"></div>
-            </div> -->
-
             <div class="card" @click="active(1)" :class="index === 1 ? 'active' : ''">
                 <p class="name" v-if="index != 1">Teaching</p>
                 <div v-if="index === 1">
@@ -179,16 +175,6 @@ export default {
                     height: 80%;
                     border: 1px solid $colorBackground;
                 }
-            }
-
-            .profile_img {
-                width: 100%;
-                aspect-ratio: 1;
-                background-image: url(../img/profile.png);
-                background-repeat: no-repeat;
-                background-size: cover;
-                filter: grayscale(100%);
-                z-index: 2;
             }
         }
 
