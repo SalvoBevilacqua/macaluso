@@ -19,7 +19,7 @@ export default {
 @use "../style/variables" as *;
 
 #header {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     width: 100%;
     font-size: $fontSizeHeader;
     font-weight: 400;
