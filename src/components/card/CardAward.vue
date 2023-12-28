@@ -1,4 +1,5 @@
 <script>
+import goUp from './goUp.vue';
 import certificationsList from './dataJs/award_certifications/certifications';
 import awards from './dataJs/award_certifications/awards';
 
@@ -8,7 +9,8 @@ export default {
             awardsList: awards,
             certificationsList: certificationsList,
         }
-    }
+    },
+    components: { goUp },
 }
 </script>
 
@@ -34,6 +36,10 @@ export default {
                     <p>- {{ item.when }}</p>
                 </li>
             </ul>
+        </div>
+
+        <div class="up">
+            <goUp />
         </div>
     </div>
 </template>

@@ -1,8 +1,9 @@
 <script>
+import goUp from './goUp.vue';
 import researchList from './dataJs/research/research';
 import currentList from './dataJs/research/current';
-import workList from './dataJs/research/workExperience';
 import meetings from './dataJs/research/meetings';
+import talks from './dataJs/research/talks';
 import reviewer from './dataJs/research/reviewer';
 
 export default {
@@ -10,11 +11,12 @@ export default {
         return {
             researchList: researchList,
             current: currentList,
-            work: workList,
             meetingList: meetings,
             reviewerList: reviewer,
+            talksList: talks,
         }
-    }
+    },
+    components: { goUp },
 }
 </script>
 
@@ -35,22 +37,10 @@ export default {
                 </li>
             </ul>
 
-
             <!-- LISTA RESEARCH -->
             <h3 class="bold name_section">Machine Learning</h3>
             <ul>
                 <li v-for="item in researchList">
-                    <p class="bold">{{ item.role }}</p>
-                    <span class="italic">{{ item.when }}</span>
-                    <p>{{ item.where }}</p>
-                    <p class="bold">Info: <span>{{ item.info }}</span></p>
-                </li>
-            </ul>
-
-            <!-- LISTA WORK EXPERIENCE -->
-            <h3 class="bold name_section">Work Experience in Industry</h3>
-            <ul>
-                <li v-for="item in work">
                     <p class="bold">{{ item.role }}</p>
                     <span class="italic">{{ item.when }}</span>
                     <p>{{ item.where }}</p>
@@ -69,10 +59,26 @@ export default {
                 </li>
             </ul>
 
+            <!-- LISTA Invited Talks -->
+            <h3 class="bold name_section">Invited Talks</h3>
+            <ul>
+                <li v-for="item in talksList">
+                    <a class="bold hover" :href="item.link">{{ item.name }}</a>
+                    <p>{{ item.when }}</p>
+                    <p class="italic">{{ item.where }}</p>
+                    <p class="bold">Title: <span>{{ item.title }}</span></p>
+                    <p class="bold">Abstract: <span>{{ item.abstract }}</span></p>
+                </li>
+            </ul>
+
             <!-- LISTA REVIEWER -->
             <h3 class="bold name_section">Reviewer Activity</h3>
             <p>I am a reviewer for the journals: </p>
             <a v-for="item in reviewerList" :href="item.link">{{ item.name }}, </a>
+        </div>
+
+        <div class="up">
+            <goUp />
         </div>
     </div>
 </template>
@@ -108,6 +114,14 @@ export default {
 
             a {
                 color: $colorHighContrast;
+            }
+
+            .hover {
+                color: $colorFont;
+
+                &:hover {
+                    color: $colorHighContrast;
+                }
             }
         }
     }

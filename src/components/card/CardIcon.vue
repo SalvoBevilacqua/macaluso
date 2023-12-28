@@ -29,6 +29,7 @@ div {
 
         &:hover {
             color: white;
+            text-shadow: 0 0 7px $colorHighContrast;
         }
     }
 }

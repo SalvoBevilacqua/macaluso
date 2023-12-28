@@ -1,11 +1,11 @@
 <script>
 import goUp from './goUp.vue';
-import education from './dataJs/education.js';
+import work from './dataJs/industry';
 
 export default {
     data() {
         return {
-            educationList: education,
+            workList: work,
         }
     },
     components: { goUp },
@@ -14,25 +14,22 @@ export default {
 
 <template>
     <div id="my_card">
-        <p class="title">Education & Career</p>
+        <p class="title">Industry</p>
         <div class="body">
-            <!-- LISTA education -->
-            <!-- <h3 class="bold name_section">Education List</h3> -->
+            <!-- LISTA CURRENT POSITION -->
+            <h3 class="bold name_section">Work Experience in Industry</h3>
             <ul>
-                <li v-for="item in educationList">
-                    <p class="bold">{{ item.name }}</p>
-                    <p>{{ item.when }}</p>
+                <li v-for="item in workList">
+                    <p class="bold">{{ item.role }}</p>
+                    <p class="italic">{{ item.when }}</p>
                     <p class="italic">{{ item.where }}</p>
-                    <p v-if="item.thesis"><span class="italic">Thesis: </span>{{ item.thesis }}</p>
-                    <p v-if="item.supervisor"><span class="italic">Supervisor: </span>{{ item.supervisor }}</p>
-                    <p v-if="item.mainSubjects"><span class="italic">Main subjects: </span>{{ item.mainSubjects }}</p>
-                    <p v-if="item.addInfo"><span class="italic">Additional info: </span>{{ item.addInfo }}</p>
+                    <p>{{ item.info }}</p>
                 </li>
             </ul>
-        </div>
 
-        <div class="up">
-            <goUp />
+            <div class="up">
+                <goUp />
+            </div>
         </div>
     </div>
 </template>

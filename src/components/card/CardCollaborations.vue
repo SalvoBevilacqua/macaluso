@@ -1,11 +1,11 @@
 <script>
 import goUp from './goUp.vue';
-import education from './dataJs/education.js';
+import coll from './dataJs/collaborations';
 
 export default {
     data() {
         return {
-            educationList: education,
+            collList: coll,
         }
     },
     components: { goUp },
@@ -14,19 +14,15 @@ export default {
 
 <template>
     <div id="my_card">
-        <p class="title">Education & Career</p>
+        <p class="title">Collaborations & Projects</p>
         <div class="body">
-            <!-- LISTA education -->
-            <!-- <h3 class="bold name_section">Education List</h3> -->
             <ul>
-                <li v-for="item in educationList">
+                <li v-for="item in collList">
                     <p class="bold">{{ item.name }}</p>
+                    <p v-if="item.link"><a :href="item.link"> - Link</a></p>
                     <p>{{ item.when }}</p>
-                    <p class="italic">{{ item.where }}</p>
-                    <p v-if="item.thesis"><span class="italic">Thesis: </span>{{ item.thesis }}</p>
-                    <p v-if="item.supervisor"><span class="italic">Supervisor: </span>{{ item.supervisor }}</p>
-                    <p v-if="item.mainSubjects"><span class="italic">Main subjects: </span>{{ item.mainSubjects }}</p>
-                    <p v-if="item.addInfo"><span class="italic">Additional info: </span>{{ item.addInfo }}</p>
+                    <p class="italic">{{ item.infoItalic }}</p>
+                    <p>{{ item.info }}</p>
                 </li>
             </ul>
         </div>

@@ -1,4 +1,5 @@
 <script>
+import goUp from './goUp.vue';
 import quantumList from './dataJs/publications/quantum';
 import machineList from './dataJs/publications/machineLearning';
 
@@ -8,7 +9,8 @@ export default {
             quantumList: quantumList,
             machineLearningList: machineList
         }
-    }
+    },
+    components: { goUp },
 }
 </script>
 
@@ -43,6 +45,10 @@ export default {
                     </p>
                 </li>
             </ul>
+        </div>
+
+        <div class="up">
+            <goUp />
         </div>
     </div>
 </template>

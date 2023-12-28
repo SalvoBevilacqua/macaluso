@@ -41,6 +41,15 @@ body {
     justify-content: space-between;
 }
 
+.up {
+    margin: 2.5rem 0 1rem;
+    color: $colorFont;
+
+    &:hover {
+        color: $colorHighContrast;
+    }
+}
+
 /* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 6px;

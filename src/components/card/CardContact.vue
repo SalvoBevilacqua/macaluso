@@ -37,6 +37,10 @@ export default {
         align-items: baseline;
         gap: .8rem;
         margin-bottom: .8rem;
+
+        &:hover {
+            color: $colorHighContrast;
+        }
     }
 
     .title {

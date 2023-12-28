@@ -3,10 +3,10 @@ import CardBiography from './card/CardBiography.vue';
 import CardContact from './card/CardContact.vue';
 import CardIcon from './card/CardIcon.vue';
 import CardPublications from './card/CardPublications.vue';
-import CardAcademic from './card/CardAcademic.vue';
+import CardIndustry from './card/CardIndustry.vue';
 import CardAward from './card/CardAward.vue';
 import CardEducation from './card/CardEducation.vue';
-import CardProfessional from './card/CardProfessional.vue';
+import CardCollaborations from './card/CardCollaborations.vue';
 import CardResearch from './card/CardResearch.vue';
 import CardTeaching from './card/CardTeaching.vue';
 import AppFooter from './AppFooter.vue';
@@ -18,7 +18,7 @@ export default {
             class_active: '',
         }
     },
-    components: { CardContact, CardIcon, CardBiography, CardPublications, CardAcademic, CardAward, CardEducation, CardProfessional, CardResearch, CardTeaching, AppFooter },
+    components: { CardContact, CardIcon, CardBiography, CardPublications, CardIndustry, CardAward, CardEducation, CardCollaborations, CardResearch, CardTeaching, AppFooter },
     methods: {
         active(id) {
             this.index = id;
@@ -52,16 +52,16 @@ export default {
             </div>
 
             <div class="card" @click="active(3)" :class="index === 3 ? 'active' : ''">
-                <p class="name" v-if="index != 3">Professional Background</p>
+                <p class="name" v-if="index != 3">Collaborations & Projects</p>
                 <div v-if="index === 3">
-                    <CardProfessional />
+                    <CardCollaborations />
                 </div>
             </div>
 
             <div class="card" @click="active(4)" :class="index === 4 ? 'active' : ''">
-                <p class="name" v-if="index != 4">Academic Focus</p>
+                <p class="name" v-if="index != 4">Industry</p>
                 <div v-if="index === 4">
-                    <CardAcademic />
+                    <CardIndustry />
                 </div>
             </div>
 

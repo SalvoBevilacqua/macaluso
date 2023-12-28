@@ -1,4 +1,5 @@
 <script>
+import goUp from './goUp.vue';
 import teachlist from './dataJs/teaching/teaching.js';
 import assistant from './dataJs/teaching/assistant.js';
 import tutor from './dataJs/teaching/tutor.js';
@@ -11,7 +12,8 @@ export default {
             listTutor: tutor,
             superList: supervision,
         }
-    }
+    },
+    components: { goUp },
 }
 </script>
 
@@ -74,6 +76,10 @@ export default {
                     <p class="bold">Abstract: <span>{{ item.abstract }}</span></p>
                 </li>
             </ul>
+        </div>
+
+        <div class="up">
+            <goUp />
         </div>
     </div>
 </template>
