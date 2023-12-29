@@ -135,6 +135,11 @@ export default {
     .tagline {
         margin: 1rem 0;
     }
+}
 
+@media screen and (max-width: 900px) {
+    #my_card {
+        width: 100%;
+    }
 }
 </style>

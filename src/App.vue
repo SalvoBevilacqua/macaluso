@@ -27,6 +27,13 @@ export default {
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 .build {
+    max-width: 2000px;
     padding: 4rem;
+}
+
+@media screen and (max-width: 1250px) {
+    .build {
+        padding: 2rem;
+    }
 }
 </style>

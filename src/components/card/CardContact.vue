@@ -48,4 +48,10 @@ export default {
         margin-bottom: 2rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    #my_card {
+        width: 100%;
+    }
+}
 </style>

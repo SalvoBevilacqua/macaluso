@@ -33,4 +33,12 @@ div {
         }
     }
 }
+
+@media screen and (max-width: 1400px) {
+    div {
+        a {
+            font-size: 1.5rem;
+        }
+    }
+}
 </style>

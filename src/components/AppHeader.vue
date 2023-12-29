@@ -34,4 +34,11 @@ export default {
         }
     }
 }
+
+@media screen and (max-width: 1250px) {
+    #header {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
 </style>

@@ -8,13 +8,13 @@ export default {
         <div class="content">
             <p class="title">Biography</p>
             <div class="body">
-                <p>My educational background includes a Bachelor’s and Master’s degree in Statistical Sciences, followed by
+                <p>My educational background includes a Bachelor's and Master's degree in Statistical Sciences, followed by
                     an
-                    Advanced Master’s in Data Science at the Bologna Business School (University of Bologna). A
+                    Advanced Master's in Data Science at the Bologna Business School (University of Bologna). A
                     comprehensive
                     scholarship from Cineca, largest Italian High-Performance Computing center, supported my participation
                     in
-                    this master’s program. Concurrently, I worked as a Data Scientist at Cineca for three years, from 2016
+                    this master's program. Concurrently, I worked as a Data Scientist at Cineca for three years, from 2016
                     to
                     2019, while pursuing my academic studies. In 2017, I commenced my Ph.D. journey in Computer Science and
                     Engineering, with an exclusive focus on Quantum Machine Learning. Throughout my Ph.D., I autonomously
@@ -85,7 +85,23 @@ export default {
             border-radius: 1rem;
         }
     }
+}
 
+@media screen and (max-width: 1250px) {
+    #my_card {
+        .body {
+            flex-direction: column;
 
+            p {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #my_card {
+        width: 100%;
+    }
 }
 </style>

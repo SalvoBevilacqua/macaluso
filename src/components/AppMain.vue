@@ -125,7 +125,6 @@ export default {
 
     .col {
         width: 100%;
-        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         border: 1px solid $colorFont;
@@ -212,6 +211,61 @@ export default {
                 &:after {
                     content: none;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    #main {
+        .footer_out {
+            margin-top: 2rem;
+        }
+
+        .col {
+            .card {
+                .name {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .icon {
+                padding: 1.3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #main {
+        .col {
+            .icon {
+                padding: .3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #main {
+        .col {
+            .card {
+                width: calc(100% / 3);
+            }
+
+            .active {
+                width: 100%;
+            }
+
+            .icon {
+                padding: 2rem 4rem;
+                width: 100%;
+                font-size: x-large;
+                aspect-ratio: unset;
+            }
+
+            .footer {
+                order: -1;
             }
         }
     }

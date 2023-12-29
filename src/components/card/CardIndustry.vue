@@ -92,4 +92,10 @@ export default {
         font-style: italic;
     }
 }
+
+@media screen and (max-width: 900px) {
+    #my_card {
+        width: 100%;
+    }
+}
 </style>
