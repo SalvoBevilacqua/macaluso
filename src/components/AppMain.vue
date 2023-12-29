@@ -270,4 +270,34 @@ export default {
         }
     }
 }
+
+@media screen and (max-width: 550px) {
+    #main {
+        .col {
+            .card {
+                .name {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #main {
+        .col {
+            .card {
+                width: calc(100% / 2);
+            }
+
+            .active {
+                width: 100%;
+            }
+
+            .icon {
+                padding: .3rem;
+            }
+        }
+    }
+}
 </style>
