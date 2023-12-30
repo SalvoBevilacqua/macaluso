@@ -41,4 +41,15 @@ div {
         }
     }
 }
+
+@media screen and (max-width: 700px) {
+    #my_card {
+        font-size: .6rem;
+
+        .title {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
 </style>
