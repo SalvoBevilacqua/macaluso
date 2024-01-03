@@ -216,6 +216,7 @@ export default {
     }
 }
 
+// MEDIA
 @media screen and (max-width: 1250px) {
     #main {
         .footer_out {

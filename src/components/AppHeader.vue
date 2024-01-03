@@ -6,9 +6,10 @@ export default {
 
 <template>
     <div id="header">
-        <p>I am <span class="high_contrast">Antonio Macaluso</span>, Senior Researcher in Quantum Artificial
-            Intelligence,
-            specialized in teaching <span class="high_contrast">quantum related topics</span> to computer science students
+        <p>I am <span class="high_contrast">Antonio Macaluso</span>, Senior Researcher in <span
+                class="high_contrast">Quantum Artificial
+                Intelligence</span>,
+            specialized in teaching <span class="high_contrast">quantum-related topics</span> to computer science students
             at
             the university level.
         </p>
